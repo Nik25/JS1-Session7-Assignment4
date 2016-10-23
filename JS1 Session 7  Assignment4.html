@@ -1,0 +1,29 @@
+<!-- Problem Statement: Write a JavaScript code that prints the mouse coordinates in a text area when we move the mouse over
+the HTML document-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<title> JS1-Session7-Assignment4</title>
+
+<script>
+        function test(event) {
+                var x = event.clientX;
+                var y = event.clientY;
+                var dt = Date();
+                var coords = "X: " + x + "; Y: " + y + "; Time: " + dt;
+                document.getElementById("move").innerHTML += coords + "<br>";
+        }
+        function clear() {
+                console.log("cl");
+                document.getElementById("move").innerHTML = "";
+        }
+</script>
+
+</head>
+<body>
+        <textarea cols="20" rows="10" onmousemove="test(event)" onmouseout="clear()">
+        </textarea>
+        <p id="move"></p>
+</body>
+</html>
